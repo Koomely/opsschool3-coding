@@ -56,7 +56,7 @@ for i in range(len(buckets)):
     #create strings for dict keys as specified
 
     if i==0:
-        str='-%d' % buckets[i]
+        str='-%d' %buckets[i]
     else:
         str='%d-%d' %(buckets[i-1],buckets[i])
 
