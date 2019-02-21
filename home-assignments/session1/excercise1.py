@@ -17,10 +17,10 @@ def getData():
         print("Can't open file")
         exit(0)
 
-def writeData(data):
+def writeYamlData(data):
     try:
         with open('sample.yml', 'w') as file:
-            yaml.dump(data, file, default_flow_style=False)
+            yaml.dump(data, file, default_flow_style=False,allow_unicode=True)
         return 1
     except IOError:
         print("Can't open file or file not exist")
@@ -35,12 +35,11 @@ ppl_ages = data['ppl_ages']
 buckets = data['buckets']
 buckets.sort()
 
-##
+## init params : final_d will hold final dictionary, temp_list = list names to be added to final_d
 
 final_d = {}
 temp_list = []
 
-buckets_field = []
 
 for i in range(len(buckets)):
 
@@ -63,15 +62,15 @@ for i in range(len(buckets)):
     final_d[str] = temp_list.copy()
     temp_list.clear()
 
-# gathering remaining oldies
+# gathering remaining oldies who didnt match previous buckets
 max=0
 for name,age in ppl_ages.items():
     temp_list.append(name)
     if age>max:
         max=age
-
 str='%d-%d' %(buckets[len(buckets)-1], max)
-
 final_d[str] = temp_list.copy()
 
-writeData(final_d)
+# writing Yaml
+
+writeYamlData(final_d)
