@@ -1,8 +1,6 @@
 import json
 import yaml
 
-#dict = {}
-#list = []
 
 data = {}
 
@@ -46,6 +44,7 @@ for i in range(len(buckets)):
     for name,age in ppl_ages.items():
         if age < buckets[i]:
             temp_list.append(name)
+
 # Removing already matched items
 
     for p in temp_list:
