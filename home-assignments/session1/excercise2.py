@@ -33,9 +33,6 @@ def getCity():
     for line in lines:
         if re.search("class=\"city\"", line):
             r=line.split('>')[1].split('<')[0]
-     #   if re.search("class=\"country_name\"", line):
-      #      r['country']=line.split('>')[2].split('<')[0]
-
     return r
 
 def get_weather(api_key, location):
