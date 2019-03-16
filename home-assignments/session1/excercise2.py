@@ -1,6 +1,9 @@
 import urllib.request
 import re
 import requests
+import time
+
+import sys
 
 # writing data to file
 def writeData(str, filename):
@@ -47,7 +50,24 @@ def getCountry(city, lon, lat):
 
 
 # 1st task -> write into file
-city=getCity()
+city=sys.argv[1]
+
+print(sys.argv[1])
+
+#print(get_weather(getKey(),city))
+#print(city)
+
+#sunrise=get_weather(getKey(),city)['sys']['sunrise']
+#sunset=get_weather(getKey(),city)['sys']['sunset']
+
+
+#sunrise_strf=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(sunrise))
+#sunset_strf=time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(sunset))
+
+#print(sunrise_strf)
+#print(sunset_strf)
+
+
 str="The weather in {} is {} degrees".format(city,get_weather(getKey(),city)['main']['temp'])
 writeData(str,"excercise2_1.txt")
 
