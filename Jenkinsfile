@@ -19,7 +19,6 @@ node('Slave-2'){
    }
    stage('Printing runnig_tests'){
        sh 'echo "runnig_tests"'
-      sh 'exit 1'
    }
    stage('Printing deploy_to_production'){
        sh 'echo "deploy_to_production"'
