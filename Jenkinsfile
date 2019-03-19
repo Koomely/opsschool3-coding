@@ -6,6 +6,7 @@ node('Slave-1'){
    stage('Printing runnig_tests'){
        sh 'echo "runnig_tests"'
       sh 'wget https://raw.githubusercontent.com/Koomely/opsschool3-coding/master/home-assignments/session1/excercise1.py'
+      sh 'wget https://raw.githubusercontent.com/Koomely/opsschool3-coding/master/home-assignments/session1/sample.json'
       sh 'python excercise1.py'
    }
    stage('Printing deploy_to_production'){
