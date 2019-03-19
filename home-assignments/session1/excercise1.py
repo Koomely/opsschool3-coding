@@ -1,7 +1,7 @@
 import json
 import yaml
 
-#omment
+
 data = {}
 
 # function open file and set data
