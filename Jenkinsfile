@@ -10,7 +10,7 @@ node('Slave-1'){
        sh 'echo "deploy_to_production"'
    }
 }
-node{
+node('Slave-2'){
    currentBuild.result = "SUCCESS"
    stage('Printing hello world'){
        sh 'echo "Hello World"'
